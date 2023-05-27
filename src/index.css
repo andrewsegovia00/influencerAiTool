@@ -1,0 +1,12 @@
+/* src/index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+li {
+    padding: 0px 15px 0px 15px;
+}
+
+ul {
+    padding: 0px 30px 0px 30px;
+}
