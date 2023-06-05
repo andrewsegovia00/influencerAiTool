@@ -1,14 +1,15 @@
-import { Nav, Hero, Auth, SignUp} from "../Components"
+import { Nav, Hero, Auth, SignUp, UploadFiles, } from "../Components"
 
 const Home = () => {
     return (
 
-    <>
-      <Nav />
+    <div className="bg-contain bg-custom-image bg-no-repeat bg-grey-2 h-screen">
+      {/* <Nav />
       <Hero /> 
       <SignUp />
-      <Auth />
-    </>
+      <Auth /> */}
+      <UploadFiles />
+    </div>
     )
 }
 

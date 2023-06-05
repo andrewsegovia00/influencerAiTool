@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { useContext } from 'react';
 import { UserContext } from './UserContext';
 
@@ -13,7 +14,7 @@ function SignUp() {
         className={`text-grey-1 flex items-center justify-center ${showSignUp ? 'absolute' : 'relative'} -right-px -left-px -top-px -bottom-px`}>
         {showSignUp && <div className="fixed left-0 right-0 bottom-0 top-0 pointer-none backdrop-blur-lg"onClick={handleToggleSignUp}  />}
         <div 
-            className={`bg-gradient-to-b from-blue-500/80 to-purple-500/60 font-poppins text-center drop-shadow-lg  px-4 py-10 rounded-3xl ${showSignUp ? 'relative' : 'hidden'}`}>
+            className={`bg-gradient-to-b from-blue-500/80 to-purple-500/60 font-poppins text-center drop-shadow-lg px-4 py-10 rounded-3xl ${showSignUp ? 'relative' : 'hidden'}`}>
             <div className="w-full p-4">
             <button 
                 onClick={handleToggleSignUp} 
