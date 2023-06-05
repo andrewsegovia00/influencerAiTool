@@ -14,6 +14,8 @@ export default {
         'grey-2': '#f0f6fc',
         'blue-1': '#8498E3',
         'dark-blue-1': '#5F657A',
+        'sub-title': '#5F657A',
+        'title': '#373C4D',
 
       },
       backgroundImage: {
