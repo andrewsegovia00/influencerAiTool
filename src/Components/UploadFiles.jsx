@@ -5,8 +5,7 @@ function UploadFiles() {
   useEffect(() => {
     const csvForm = document.getElementById('csvForm');
     const csvFileInput = document.getElementById('csvFileInput');
-
-
+    csvForm.addEventListener('submit', handleFormSubmit);
 
     const handleFormSubmit = (event) => {
       event.preventDefault();
@@ -19,40 +18,33 @@ function UploadFiles() {
           const jsonData = Papa.parse(csvData, { header: true }).data;
           console.log(jsonData);
           jsonData.forEach( (jsonData) => {
-          sumValue += parseInt(jsonData["Video views"]);
+            sumValue += parseInt(jsonData["Video views"]);
+            console.log(jsonData.Likes)
+          });
 
-        console.log(jsonData.Likes)
-        });
-        let divTemp = document.createElement('div');
-        divTemp.style.display = "inline";
-        divTemp.innerText = sumValue;
-        document.getElementById('input').appendChild(divTemp);
-        console.log(sumValue);
-        // = document.getElementById('input').innerText = jsonData.Date
+          let divTemp = document.createElement('div');
+          divTemp.style.display = "inline";
+          divTemp.innerText = sumValue;
+          document.getElementById('input').appendChild(divTemp);
+          console.log(sumValue);
         };
         reader.readAsText(file);
       }
     };
 
-    csvForm.addEventListener('submit', handleFormSubmit);
-
-    // Clean up the event listener when the component unmounts
-    return () => {
-      csvForm.removeEventListener('submit', handleFormSubmit);
-    };
-  }, []); // Empty dependency array to run the effect only once
-
-
+    return () => {csvForm.removeEventListener('submit', handleFormSubmit);};
+  }, []);
 
   return (
     <>
-    <form id="csvForm" className="text-center pt-56">
-      <input type="file" id="csvFileInput" accept=".csv" />
-      <button type="submit" className="border-blue-1 border-2 bg-grey-1 px-3 py-1 rounded-xl">
-        Upload CSV
-      </button>
-    </form>
-    <div id='input'></div>
+      <form id="csvForm" className="text-center pt-56">
+        <input type="file" id="csvFileInput" accept=".csv" />
+        <button type="submit" className="border-blue-1 border-2 bg-grey-1 px-3 py-1 rounded-xl">
+          Upload CSV
+        </button>
+      </form>
+      <div id='input'>
+      </div>
     </>
   );
 }
