@@ -43,7 +43,7 @@ const UserHome = () => {
         <Nav />
         <Sidebar />
         <div className="p-4 sm:ml-64">
-          <div>Content that only signed in users can see.</div>
+          <div>Content that only signed in users can see. This container should change based on selected sidebar item.</div>
           <button onClick={handleSignout}>Log Out</button>
         </div>
       </div>
