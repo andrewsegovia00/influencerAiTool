@@ -1,4 +1,4 @@
-import { ChartIcon, SparklesIcon, BookOpenIcon, HashtagIcon } from "../Icons";
+import { ChartIcon, SparklesIcon, BookOpenIcon, HashtagIcon, BriefcaseIcon } from "../Icons";
 import { SidebarItem } from "./";
 
 const Sidebar = () => {
@@ -16,8 +16,9 @@ const Sidebar = () => {
       <div className="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
         <ul className="space-y-2 font-medium">
           <SidebarItem icon={<ChartIcon/>} href="#dashboard" text="Dashboard" />
-          <SidebarItem icon={<HashtagIcon/>} href="#platforms" text="Platforms" />
+          <SidebarItem icon={<HashtagIcon/>} href="#platforms" text="My Platforms" />
           <SidebarItem icon={<SparklesIcon/>} href="#insights" text="Insights" />
+          <SidebarItem icon={<BriefcaseIcon/>} href="#partnerships" text="Partnerships" />
           <SidebarItem icon={<BookOpenIcon/>} href="#resources" text="Resources" />
         </ul>
       </div>
