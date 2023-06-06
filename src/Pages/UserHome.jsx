@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Nav } from "../Components";
+import { Sidebar } from "../Components/Sidebar"
 import { signOut, onAuthStateChanged } from "firebase/auth";
 import { auth } from "../Scripts/firebase";
 import { useNavigate } from "react-router-dom";
@@ -38,9 +39,14 @@ const UserHome = () => {
 
   return (
     <>
-      <Nav />
-      <div>Content that only signed in users can see.</div>
-      <button onClick={handleSignout}>Log Out</button>
+      <div>
+        <Nav />
+        <Sidebar />
+        <div className="p-4 sm:ml-64">
+          <div>Content that only signed in users can see.</div>
+          <button onClick={handleSignout}>Log Out</button>
+        </div>
+      </div>
     </>
   );
 };
