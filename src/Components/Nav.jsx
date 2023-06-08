@@ -4,6 +4,8 @@ import { UserContext } from './UserContext';
 import { chatLogo } from "../assets"
 
 const Nav = () => {
+
+  // TODO: add prop isSignedIn for checking if user is signed in. If not signed in, display login and sign up buttons, else show user dropdown
   const { showSignUp, setShowSignUp } = useContext(UserContext);
   const { showLogin, setLogin } = useContext(UserContext);
 
